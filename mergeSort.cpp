@@ -4,8 +4,8 @@
 
 
 /* --------------------------- merge --------------------------- */
-/*  Given an array, arr, with length l, a starting index and
-    width, w, merge combines the two sorted subarrays 
+/*  Given an array, its length, a starting index, and subarray
+    width w, merge combines the two sorted subarrays 
                     arr[index : index + w - 1] 
     and 
                 arr[index + w : index + 2 * w - 1]
@@ -20,7 +20,8 @@
         index : index of first entry in first subarray
         w     : width of each subarray
 
-    Features: This implementation has time complexity O(length). */
+    Features: This implementation has time complexity O(length)
+    and requires O(1) additional memory.                        */
 
 void merge(int *arr, int *temp, int length, int index, int w) {
     int i, j, i_end, j_end, k;
@@ -59,8 +60,9 @@ void merge(int *arr, int *temp, int length, int index, int w) {
 
 
 /* ------------------ mergeSort (bottom up) ------------------ */
-/*  Given an array, arr, the mergeSort algorithm returns a 
-    pointer to a sorted array containing the entries of arr.
+/*  Given an array the mergeSort algorithm returns a pointer 
+    to a sorted array containing the entries of the original
+    array.
     
     Input variables:
         arr   : pointer to array of integers to be sorted
@@ -72,8 +74,10 @@ void merge(int *arr, int *temp, int length, int index, int w) {
         temp  : pointer to sorted copy of arr
 
     Features: This implementation has time complexity 
-    O(length lg(length)). Additionally, this sorting 
-    algorithm is stable.                                       */
+    O(length lg(length)) and requires O(length) additional
+    memory (this memory is for the array temp which is
+    allocated in main). Additionally, this sorting algorithm 
+    is stable.                                                */
 
 int * mergeSort (int *arr, int *temp, int length) {
     int i, w;    
@@ -94,8 +98,8 @@ int * mergeSort (int *arr, int *temp, int length) {
 
 
 /* ----------------------- arrayPrint ----------------------- */
-/*  Given an array, arr, with length l, this function prints
-    the values of the array                                   */
+/*  Given an array and its length this function prints the 
+    elements of the array.                                    */
 
 void arrayPrint(int *arr, int length) {
     int i;
@@ -104,11 +108,11 @@ void arrayPrint(int *arr, int length) {
         std::cout << " " << arr[i]; // print ith entry in array
     }
 
-    std::cout << std::endl;         // endline after all entries printed
+    std::cout << std::endl;         // end line after all entries printed
 }
 
 
-/* ----------------------- arrayPrint ----------------------- */
+/* -------------------------- main -------------------------- */
 /*  Main routine for experimenting with mergeSort. Try it 
     with n = one billion for fun.                             */
 
@@ -137,6 +141,5 @@ int main () {
     arrayPrint(arr, n);
 
     delete[] arr, temp;             // free memory
-
     return 0;                       // end main
 }
