@@ -20,7 +20,7 @@
         index : index of first entry in first subarray
         w     : width of each subarray
 
-    Features: This implementation has complexity O(n).          */
+    Features: This implementation has time complexity O(length). */
 
 void merge(int *arr, int *temp, int length, int index, int w) {
     int i, j, i_end, j_end, k;
@@ -71,7 +71,7 @@ void merge(int *arr, int *temp, int length, int index, int w) {
     Output variable:
         temp  : pointer to sorted copy of arr
 
-    Features: This implementation has complexity O(n lg(n)).
+    Features: This implementation has complexity O(length lg(length)).
     Additionally, this sorting algorithm is stable.            */
 
 int * mergeSort (int *arr, int *temp, int length) {
