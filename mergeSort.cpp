@@ -71,8 +71,9 @@ void merge(int *arr, int *temp, int length, int index, int w) {
     Output variable:
         temp  : pointer to sorted copy of arr
 
-    Features: This implementation has complexity O(length lg(length)).
-    Additionally, this sorting algorithm is stable.            */
+    Features: This implementation has time complexity 
+    O(length lg(length)). Additionally, this sorting 
+    algorithm is stable.                                       */
 
 int * mergeSort (int *arr, int *temp, int length) {
     int i, w;    
